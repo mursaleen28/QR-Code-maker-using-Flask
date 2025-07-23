@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>
+    window.addEventListener('offline', () => {
+      alert('Internet not available. Please reconnect to use this service.');
+    });
+  </script>
+</head>  
+<body>
+  <div class="container">
+    <h2>QR Code Generator</h2>
+    <form action="/generate" method="post">
+      <input type="text" name="qrdata" placeholder="Enter text or URL" required>
+      <button type="submit">Generate QR Code</button>
+    </form>
+    <p>After clicking generate, your QR code image will be downloaded.</p>
+  </div>
+</body>
+</html>
+   
